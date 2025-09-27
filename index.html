@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Online Quiz Application</title>
+  <meta name="description" content="Lightweight interactive quiz app with timer, instant feedback, and scoring - built with HTML, CSS & JS" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Online Quiz Application</h1>
+        <p class="lead">Practice with multiple-choice quizzes, per-question timers, and instant feedback.</p>
+      </div>
+      <div class="meta">
+        <div class="progress" id="progress">Question 1 / 5</div>
+        <div class="timer" id="timer">00:15</div>
+      </div>
+    </header>
+    <!-- Create Quiz Section -->
+<section class="card" id="createQuiz" style="display:none;">
+    <h2>Create Your Own Quiz</h2>
+    <div id="questionInputs"></div>
+  
+    <button class="btn-primary" id="addQuestionBtn">+ Add Question</button>
+    <button class="btn-ghost" id="startCustomQuizBtn">Start Quiz</button>
+  </section>
+  
+  <div style="margin:12px 0;">
+    <button class="btn-ghost" id="toggleCreateBtn">Create Your Own Quiz</button>
+  </div>
+  
+
+    <main class="card" id="card">
+      <div class="question">
+        <div class="q-text" id="qtext">Loading question...</div>
+        <div class="options" id="options"></div>
+      </div>
+
+      <div class="controls">
+        <button class="btn-ghost" id="prevBtn">Previous</button>
+        <button class="btn-primary" id="nextBtn">Next</button>
+      </div>
+
+      <div class="result" id="result">
+        <strong id="scoreText">Score: 0 / 0</strong>
+        <div id="feedback" style="margin-top:8px;color:var(--muted)"></div>
+        <div style="margin-top:10px;display:flex;gap:8px;justify-content:flex-end">
+          <button class="btn-ghost" id="restartBtn">Restart</button>
+          <button class="btn-primary" id="reviewBtn">Review Answers</button>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      Tip: Click an option to submit. You get instant feedback and the correct answer is highlighted.
+    </footer>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

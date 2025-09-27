@@ -1,0 +1,104 @@
+:root {
+  --bg: #f9f9fb;
+  --card: #ffffff;
+  --muted: #555;
+  --accent: #4f46e5;
+  --glass: rgba(0, 0, 0, 0.03);
+  --success: #16a34a;
+  --danger: #dc2626;
+}
+
+* { box-sizing: border-box }
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+  background: var(--bg);
+  color: #222;
+}
+.wrap { max-width: 960px; margin: 28px auto; padding: 24px }
+
+header { display: flex; justify-content: space-between; align-items: center }
+h1 { margin: 0; font-size: 22px }
+p.lead { color: var(--muted); margin: 6px 0 18px }
+
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.meta { display: flex; gap: 12px; align-items: center }
+.meta .timer {
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--glass);
+}
+.meta .progress { color: var(--muted); font-size: 14px }
+
+.question { margin-top: 16px }
+.q-text { font-size: 18px; margin: 0 0 14px }
+.options { display: grid; gap: 10px }
+.opt {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: #fdfdfd;
+  cursor: pointer;
+  transition: transform .08s ease, background .2s;
+  text-align: left;
+}
+.opt:hover { transform: translateY(-3px); background: #f1f5f9 }
+.opt.correct { border-color: var(--success); background: #dcfce7 }
+.opt.wrong { border-color: var(--danger); background: #fee2e2 }
+
+.controls { display: flex; gap: 10px; justify-content: flex-end; margin-top: 14px }
+button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--accent), #38bdf8);
+  color: white;
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.1);
+  color: var(--muted);
+}
+
+.result {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  display: none;
+}
+.result.show { display: block }
+
+footer { margin-top: 18px; color: var(--muted); font-size: 13px }
+
+@media (max-width: 700px) {
+  .wrap { padding: 12px }
+  header { flex-direction: column; align-items: flex-start; gap: 12px }
+}
+#createQuiz input, #createQuiz textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#createQuiz .q-block {
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
